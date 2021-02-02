@@ -118,7 +118,7 @@ class CategoryComponent extends React.Component {
   };
   
   onCreateNew = (item) => {
-    this.setState({originName:"", selectedId:0, isError:false, isNew: true, catName:"", catRequestName:""});
+    this.setState({originName:"", originRequestName:"", selectedId:0, isError:false, isNew: true, catName:"", catRequestName:""});
   };
 
   onSaveClicked = () => {
@@ -134,7 +134,6 @@ class CategoryComponent extends React.Component {
        ? res = CategoriesService.addNewCategory(cat)
        : res = CategoriesService.editCategory(this.state.selectedId, cat);
        
-    //console.log(res);
     setTimeout(() => {
         window.location.reload();
     }, 50);
