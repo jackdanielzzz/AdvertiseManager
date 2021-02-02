@@ -9,8 +9,6 @@ import TextField from '@material-ui/core/TextField';
 import Divider from "@material-ui/core/Divider";
 import CategoriesService from "../services/CategoriesService";
 
-//hello 
-
 const useStyles = theme => ({
     root: {
         flexGrow: 1,
