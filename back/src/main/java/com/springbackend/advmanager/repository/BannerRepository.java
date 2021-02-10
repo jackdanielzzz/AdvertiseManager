@@ -19,4 +19,5 @@ public interface BannerRepository extends JpaRepository<Banner, Long> {
 
 //    @Query("select b from Banner b where b.id = :id")
 //    Banner findOneById(Long id);
+
 }

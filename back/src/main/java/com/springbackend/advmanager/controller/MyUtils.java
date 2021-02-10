@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.net.InetAddress;
 import java.util.Comparator;
 
-public class myUtils {
+public class MyUtils {
     private static final String[] IP_HEADER_CANDIDATES = {
             "X-Forwarded-For",
             "Proxy-Client-IP",

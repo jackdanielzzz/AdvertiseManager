@@ -35,13 +35,13 @@ public class RequestController {
     private BannerRepository bannerRepository;
 
     @RequestMapping(value = "bid", method = RequestMethod.GET)
-    public ResponseEntity<String> showEditMeetingForm(@Param("category") final String category,
+    public ResponseEntity<String> requestHandler(@Param("category") final String category,
                                             @RequestHeader(value="User-Agent") String userAgent,
                                             HttpServletRequest httpRequest) {
 
         List<Banner> bannerList = bannerRepository.findByCategoryName(category);
-        bannerList.sort(Collections.reverseOrder(new myUtils.sortByPrice()));
-        String remoteAddress = myUtils.getIPFromRequest(httpRequest);
+        bannerList.sort(Collections.reverseOrder(new MyUtils.sortByPrice()));
+        String remoteAddress = MyUtils.getIPFromRequest(httpRequest);
         DateTime today = new DateTime().withTimeAtStartOfDay();
         DateTime tomorrow = today.plusDays(1).withTimeAtStartOfDay();
         List<Request> requestList = requestRepository.findByArgs(userAgent, remoteAddress, today.toDate(), tomorrow.toDate());
